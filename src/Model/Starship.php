@@ -37,4 +37,9 @@ class Starship
     {
         return $this->status;
     }
+
+    public function getManu(): string
+    {
+        return 'Manu';
+    }
 }
