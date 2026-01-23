@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use phpDocumentor\Reflection\Types\String_;
+
 class Starship
 {
     public function __construct(
@@ -36,10 +38,5 @@ class Starship
     public function getStatus(): string
     {
         return $this->status;
-    }
-
-    public function getManu(): string
-    {
-        return 'Manu';
     }
 }
