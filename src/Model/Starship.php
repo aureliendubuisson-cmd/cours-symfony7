@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use phpDocumentor\Reflection\Types\String_;
+
 class Starship
 {
     public function __construct(
@@ -41,5 +43,10 @@ class Starship
     public function getManu(): string
     {
         return 'Manu';
+    }
+
+    public function getBilbon(): string
+    {
+        return 'Bilbon';
     }
 }
