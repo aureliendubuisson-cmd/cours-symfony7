@@ -9,3 +9,4 @@
     enregistrement (commit) => `git commit -m "nomDuCommit"`
     pousser les modifs sur le dépôt distant (github) => `git push`
     récupérer modifications sur branche distante (github) => `git pull`
+    rebase => `git rebase main` suivi de `git rebase --continue`

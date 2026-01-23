@@ -39,14 +39,4 @@ class Starship
     {
         return $this->status;
     }
-
-    public function getManu(): string
-    {
-        return 'Manu';
-    }
-
-    public function getBilbon(): string
-    {
-        return 'Bilbon';
-    }
 }
