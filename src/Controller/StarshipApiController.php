@@ -8,14 +8,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/api/starships')]
+
 class StarshipApiController extends AbstractController
 {
-    #[Route('/api/starships')]
-    public function getCollection(LoggerInterface $logger, StarshipRepository $repository): Response
+    #[Route('', methods: ['GET'])]
+    public function getCollection(StarshipRepository $repository): Response
     {
-        $logger->info('Starship collection retrieved');
         $starships = $repository->findAll();
-
         return $this->json($starships);
     }
+
+    #[Route('/{id<\d+>}', methods:['GET'])]
+    public function get(int $id, StarshipRepository $repository): Response
+    {
+        $starship = $repository->find($id);
+
+        if (!$starship) {
+            throw $this->createNotFoundException('Starship not found');
+            }
+
+        return $this->json($starship);
+}
 }
